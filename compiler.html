@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>C Compiler - C-CodeLab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span> C </span> C-CodeLab
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Learn</a>
+      <a href="#">Practice</a>
+    </nav>
+  </header>
+
+
+  <main class="compiler-page">
+
+    <div class="compiler-header">
+      <div>
+        <h1>Online C Compiler</h1>
+        <p>Write, run and test your C programs.</p>
+      </div>
+
+      <button id="runBtn">▶ Run Code</button>
+    </div>
+
+
+    <section class="editor-container">
+
+      <div class="editor-header">
+        <span>main.c</span>
+
+        <button id="clearBtn">
+          Clear
+        </button>
+      </div>
+
+      <textarea id="codeEditor">#include <stdio.h>
+
+int main() {
+
+    printf("Hello, C-CodeLab!");
+
+    return 0;
+}</textarea>
+
+    </section>
+
+
+    <section class="output-container">
+
+      <div class="output-header">
+        <span>OUTPUT</span>
+      </div>
+
+      <pre id="output">Click "Run Code" to execute your program.</pre>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <strong>C-CodeLab</strong>
+    <p>Learn • Code • Practice • Grow</p>
+  </footer>
+
+
+  <script>
+
+    const runBtn = document.getElementById("runBtn");
+
+    const clearBtn = document.getElementById("clearBtn");
+
+    const editor = document.getElementById("codeEditor");
+
+    const output = document.getElementById("output");
+
+
+    runBtn.addEventListener("click", function() {
+
+      const code = editor.value;
+
+      if (code.trim() === "") {
+
+        output.textContent = "Error: Code editor is empty.";
+
+        return;
+      }
+
+      output.textContent =
+        "Compiling...\n\n" +
+        "Your C program has been sent for compilation.";
+
+    });
+
+
+    clearBtn.addEventListener("click", function() {
+
+      editor.value = "";
+
+      output.textContent =
+        "Editor cleared.";
+
+    });
+
+  </script>
+
+</body>
+</html>
